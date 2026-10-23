@@ -415,7 +415,8 @@ function result(){
   window.scrollTo(0,0);
 }
 
-home();
+const _tp=+(new URLSearchParams(location.search).get('t')||(location.hash.match(/\d+/)||[0])[0]);
+if(_tp&&TESTS[_tp-1]) start(_tp); else home();
 }
 </script>
 
